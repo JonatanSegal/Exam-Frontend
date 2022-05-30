@@ -7,7 +7,7 @@ export async function makeOptionForTeam(){
         .then(fetchedTeams =>{
             const options = document.getElementById("RiderTeam")
             fetchedTeams.forEach(team =>{
-                options.innerHTML +='<option>'+team.name+'</option>'
+                options.innerHTML +='<option value="'+team.id+'">'+team.name+'</option>'
             })
         })
 }
@@ -22,7 +22,7 @@ function addRider() {
     rider.name = document.getElementById("RiderName").value
     rider.age = document.getElementById("RiderAge").value
     rider.country = document.getElementById("RiderCountry").value
-    rider.team = document.getElementById("RiderTeam").id
+    rider.team = document.getElementById("RiderTeam").valueOf().selectedIndex
     fetch(URL,makeOptions("POST",rider))
         .then(res =>{
             if(!res.ok){
