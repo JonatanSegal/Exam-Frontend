@@ -3,7 +3,7 @@ import "https://unpkg.com/navigo"  //Will create the global Navigo object used b
 import { renderText, setActiveLink, renderTemplate, loadTemplate} from "./utils.js"
 import{makeTable} from "./pages/home/home.js"
 import{setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderADD/AddRider.js"
-import{riderSelectOptions} from "./pages/Update/Update.js"
+import{riderSelectOptions,UpdateFields,teamsOption,setUpButtons} from "./pages/Update/Update.js"
 
 window.addEventListener("load", async () => {
 
@@ -24,6 +24,9 @@ window.addEventListener("load", async () => {
     }).on("/Update", ()=>{
         renderTemplate(templateUpdate, "content")
         riderSelectOptions()
+        teamsOption()
+        UpdateFields()
+        setUpButtons()
     }).on("/Add",()=>{
         renderTemplate(templateAdd,"content")
         makeOptionForTeam()
