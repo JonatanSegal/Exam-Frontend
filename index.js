@@ -9,7 +9,7 @@ window.addEventListener("load", async () => {
 
     const templateHome = await loadTemplate("./pages/home/home.html")
     const templateUpdate = await loadTemplate("./pages/Update/Update.html")
-    const templateCrud = await  loadTemplate("./pages/RiderADD/AddRider.html")
+    const templateAdd = await  loadTemplate("./pages/RiderADD/AddRider.html")
 
     const router = new Navigo("/", { hash: true });
     router
@@ -24,8 +24,8 @@ window.addEventListener("load", async () => {
     }).on("/Update", ()=>{
         renderTemplate(templateUpdate, "content")
         riderSelectOptions()
-    }).on("/CRUD",()=>{
-        renderTemplate(templateCrud,"content")
+    }).on("/Add",()=>{
+        renderTemplate(templateAdd,"content")
         makeOptionForTeam()
         setUpAddButtonHandler()
     })

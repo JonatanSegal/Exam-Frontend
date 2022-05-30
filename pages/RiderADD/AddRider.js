@@ -29,6 +29,16 @@ function addRider() {
                 return Promise.reject("Error: " + res.status)
             }
             return res.json()
-        })
+        }).then(newRider =>{
+        document.getElementById("Added-rider").innerText = "New Rider added"
+        document.getElementById("Added-rider").style.display="block"
+        clearFields()
+    })
         .catch(e => console.error(e))
+}
+
+function clearFields(){
+    document.getElementById("RiderName").value = ""
+    document.getElementById("RiderAge").value =""
+    document.getElementById("RiderCountry").value = ""
 }
