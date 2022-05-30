@@ -5,6 +5,7 @@ import{makeTable} from "./pages/home/home.js"
 import{setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderADD/AddRider.js"
 import{riderSelectOptions,UpdateFields,teamsOption,setUpButtons} from "./pages/Update/Update.js"
 import {optionsForTeams,UpdateTable,buttonClearTable} from "./pages/teams/teams.js"
+import {shirtRiderFields} from "./pages/shirts/shirts.js"
 
 window.addEventListener("load", async () => {
 
@@ -12,6 +13,7 @@ window.addEventListener("load", async () => {
     const templateUpdate = await loadTemplate("./pages/Update/Update.html")
     const templateAdd = await  loadTemplate("./pages/RiderADD/AddRider.html")
     const templateTeams = await loadTemplate("./pages/teams/teams.html")
+    const templateShirt = await  loadTemplate("./pages/shirts/shirts.html")
 
     const router = new Navigo("/", { hash: true });
     router
@@ -38,6 +40,9 @@ window.addEventListener("load", async () => {
         optionsForTeams()
         UpdateTable()
         buttonClearTable()
+    }).on("/shirts", ()=>{
+        renderTemplate(templateShirt,"content")
+        shirtRiderFields()
     })
 });
 
