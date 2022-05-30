@@ -28,8 +28,9 @@ export async function UpdateFields(){
 }
 
  async function UpdateRiderFields(){
-    const d = document.getElementById("RiderSelect").valueOf().selectedIndex;
-   await fetch(URL+"/"+d)
+    var d = document.getElementById("RiderSelect");
+    var id = d.value;
+   await fetch(URL+"/"+id)
        .then(res => res.json())
        .then(fetchedRider => {
            document.getElementById("Update-name").value = fetchedRider.name
@@ -42,6 +43,7 @@ export async function UpdateFields(){
 }
 export function setUpButtons(){
     document.getElementById("btn-update-rider").onclick = UpdateRider;
+    document.getElementById("btn-delete-rider").onclick = DeleteRider;
 }
 
  function UpdateRider(){
@@ -53,7 +55,8 @@ export function setUpButtons(){
     riderUpdate.mountainPoints = document.getElementById("Update-mountainPoints").value
     riderUpdate.springPoints = document.getElementById("Update-sprintPoints").value
     riderUpdate.totalTime = document.getElementById("Update-time").value
-     const id = document.getElementById("RiderSelect").valueOf().selectedIndex;
+     var d = document.getElementById("RiderSelect");
+     var id = d.value;
 
      fetch(URL+"/"+id, makeOptions("PATCH",riderUpdate))
          .then(res =>{
@@ -61,5 +64,23 @@ export function setUpButtons(){
                  return Promise.reject("Error: " + res.status)
              }
              return res.json()})
+         .then(reloadPage)
          .catch(e => console.error(e))
+}
+
+function DeleteRider(){
+    var d = document.getElementById("RiderSelect");
+    var id = d.value;
+    fetch(URL+"/"+id, makeOptions("DELETE"))
+        .then(res => {
+            if (res.ok){
+                console.log("Delete success")
+            }
+        }).then(reloadPage)
+        .catch(e=> console.log(e))
+
+}
+
+function reloadPage(){
+    window.location.reload()
 }
