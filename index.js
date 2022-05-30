@@ -2,6 +2,7 @@ import "https://unpkg.com/navigo"  //Will create the global Navigo object used b
 
 import { renderText, setActiveLink, renderTemplate, loadTemplate} from "./utils.js"
 import{makeTable} from "./pages/home/home.js"
+import {setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderCRUD/CRUD.js"
 
 window.addEventListener("load", async () => {
 
@@ -23,6 +24,8 @@ window.addEventListener("load", async () => {
         renderTemplate(templateTimer, "content")
     }).on("/CRUD",()=>{
         renderTemplate(templateCrud,"content")
+        makeOptionForTeam()
+        setUpAddButtonHandler()
     })
 });
 
