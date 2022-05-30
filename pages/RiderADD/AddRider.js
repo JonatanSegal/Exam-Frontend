@@ -18,11 +18,13 @@ export function setUpAddButtonHandler(){
 }
 
 function addRider() {
+    var num = document.getElementById("RiderTeam")
+    var teamID = num.value
     const rider = {}
     rider.name = document.getElementById("RiderName").value
     rider.age = document.getElementById("RiderAge").value
     rider.country = document.getElementById("RiderCountry").value
-    rider.team = document.getElementById("RiderTeam").valueOf().selectedIndex
+    rider.team = teamID
     fetch(URL,makeOptions("POST",rider))
         .then(res =>{
             if(!res.ok){

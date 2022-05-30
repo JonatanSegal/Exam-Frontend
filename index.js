@@ -4,6 +4,7 @@ import { renderText, setActiveLink, renderTemplate, loadTemplate} from "./utils.
 import{makeTable} from "./pages/home/home.js"
 import{setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderADD/AddRider.js"
 import{riderSelectOptions,UpdateFields,teamsOption,setUpButtons} from "./pages/Update/Update.js"
+import {optionsForTeams,UpdateTable,buttonClearTable} from "./pages/teams/teams.js"
 
 window.addEventListener("load", async () => {
 
@@ -34,6 +35,9 @@ window.addEventListener("load", async () => {
         setUpAddButtonHandler()
     }).on("/teams",()=>{
         renderTemplate(templateTeams,"content")
+        optionsForTeams()
+        UpdateTable()
+        buttonClearTable()
     })
 });
 

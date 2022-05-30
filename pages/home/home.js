@@ -12,6 +12,9 @@ export async function makeTable(){
                     '                <td>'+rider.age+'</td>\n' +
                     '                <td>'+rider.country+'</td>\n' +
                     '                <td>'+rider.team+'</td>\n'+
+                    '                <td>'+rider.mountainPoints+'</td>\n' +
+                    '                <td>'+rider.sprintPoints+'</td>\n' +
+                    '                <td>'+rider.totalTime+'</td>\n' +
                     '            </tr>'
 
             })
