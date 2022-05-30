@@ -1,15 +1,19 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Name" aria-label="First name">
+        <form>
+            <div class="form-group">
+                <label for="RiderName">Name</label>
+                <input type="text" class="form-control" id="RiderName" placeholder="Name">
             </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Age" aria-label="Last name">
+            <div class="form-group">
+                <label for="RiderAge">Age</label>
+                <input type="number" class="form-control" id="RiderAge" placeholder="Age">
             </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Country" aria-label="Last name">
+            <div class="form-group">
+                <label for="RiderCountry">County</label>
+                <input type="text" class="form-control" id="RiderCountry" placeholder="Country">
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px">Submit</button>
+        </form>
     </div>
 </template>
