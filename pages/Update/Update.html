@@ -1,0 +1,42 @@
+<template>
+    <div class="container">
+        <select class="form-select" aria-label="Default select example" id="RiderSelect">
+            <option selected>Select who to update</option>
+        </select>
+        <form>
+            <div class="row">
+                <div class="col" style="margin-top: 10px">
+                    <input type="text" class="form-control" placeholder="Name" id="Update-name">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" placeholder="Age" id="Update-age">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px">
+                <div class="col">
+                    <select id="Update-team" class="form-select" placeholder="team">
+                        <option selected>Choose a team...</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Country" id="Update-country">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Mountain points" id="Update-mountainPoints">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Sprint points" id="Update-springPoints">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Total time" id="Update-time">
+                </div>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px"
+                id="btn-update-rider">Submit</button>
+    </div>
+</template>

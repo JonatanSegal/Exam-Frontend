@@ -2,13 +2,14 @@ import "https://unpkg.com/navigo"  //Will create the global Navigo object used b
 
 import { renderText, setActiveLink, renderTemplate, loadTemplate} from "./utils.js"
 import{makeTable} from "./pages/home/home.js"
-import {setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderCRUD/CRUD.js"
+import{setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderADD/AddRider.js"
+import{riderSelectOptions} from "./pages/Update/Update.js"
 
 window.addEventListener("load", async () => {
 
     const templateHome = await loadTemplate("./pages/home/home.html")
-    const templateTimer = await loadTemplate("./pages/timers/timers.html")
-    const templateCrud = await  loadTemplate("./pages/RiderCrud/CRUD.html")
+    const templateUpdate = await loadTemplate("./pages/Update/Update.html")
+    const templateCrud = await  loadTemplate("./pages/RiderADD/AddRider.html")
 
     const router = new Navigo("/", { hash: true });
     router
@@ -20,8 +21,9 @@ window.addEventListener("load", async () => {
         }).on("", () =>{
             renderTemplate(templateHome, "content")
             makeTable()
-    }).on("/timers", ()=>{
-        renderTemplate(templateTimer, "content")
+    }).on("/Update", ()=>{
+        renderTemplate(templateUpdate, "content")
+        riderSelectOptions()
     }).on("/CRUD",()=>{
         renderTemplate(templateCrud,"content")
         makeOptionForTeam()
