@@ -1,6 +1,6 @@
 import{makeOptions} from "../../fetchUtils.js"
-//const URL = "http://localhost:8080/api/tour"
-const URL = "https://sem3-24hexam.azurewebsites.net/api/tour"
+const URL = "http://localhost:8080/api/tour"
+//const URL = "https://sem3-24hexam.azurewebsites.net/api/tour"
 
 export async function riderSelectOptions(){
     await fetch(URL)
@@ -54,7 +54,7 @@ export function setUpButtons(){
     riderUpdate.country = document.getElementById("Update-country").value
     riderUpdate.team = document.getElementById("Update-team").valueOf().selectedIndex
     riderUpdate.mountainPoints = document.getElementById("Update-mountainPoints").value
-    riderUpdate.springPoints = document.getElementById("Update-sprintPoints").value
+    riderUpdate.sprintPoints = document.getElementById("Update-sprintPoints").value
     riderUpdate.totalTime = document.getElementById("Update-time").value
      var d = document.getElementById("RiderSelect");
      var id = d.value;

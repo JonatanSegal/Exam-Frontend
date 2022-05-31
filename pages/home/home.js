@@ -1,5 +1,5 @@
-const URL = "https://sem3-24hexam.azurewebsites.net/api/tour"
-//const URL = "http://localhost:8080/api/tour"
+//const URL = "https://sem3-24hexam.azurewebsites.net/api/tour"
+const URL = "http://localhost:8080/api/tour"
 export async function makeTable(){
 
     await fetch(URL)
