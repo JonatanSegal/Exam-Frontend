@@ -6,7 +6,7 @@ export async function makeTable(){
         .then(res => res.json())
         .then(fetchedRiders =>{
             const body = document.getElementById("table-body")
-            fetchedRiders.forEach( rider =>{
+            fetchedRiders.forEach(rider =>{
                 body.innerHTML +='<tr>\n' +
                     '                <td>'+rider.name+'</td>\n' +
                     '                <td>'+rider.age+'</td>\n' +

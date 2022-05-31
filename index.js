@@ -1,6 +1,6 @@
 import "https://unpkg.com/navigo"  //Will create the global Navigo object used below
 
-import { renderText, setActiveLink, renderTemplate, loadTemplate} from "./utils.js"
+import {setActiveLink, renderTemplate, loadTemplate} from "./utils.js"
 import{makeTable} from "./pages/home/home.js"
 import{setUpAddButtonHandler,makeOptionForTeam} from "./pages/RiderADD/AddRider.js"
 import{riderSelectOptions,UpdateFields,teamsOption,setUpButtons} from "./pages/Update/Update.js"
@@ -22,25 +22,29 @@ window.addEventListener("load", async () => {
                 setActiveLink("menu", match.url)
                 done()
             }
-        }).on("", () =>{
+        }).on("/", () =>{
             renderTemplate(templateHome, "content")
             makeTable()
-    }).on("/Update", ()=>{
+    })
+        .on("/Update", ()=>{
         renderTemplate(templateUpdate, "content")
         riderSelectOptions()
         teamsOption()
         UpdateFields()
         setUpButtons()
-    }).on("/Add",()=>{
+    })
+        .on("/Add",()=>{
         renderTemplate(templateAdd,"content")
         makeOptionForTeam()
         setUpAddButtonHandler()
-    }).on("/teams",()=>{
+    })
+        .on("/teams",()=>{
         renderTemplate(templateTeams,"content")
         optionsForTeams()
         UpdateTable()
         buttonClearTable()
-    }).on("/shirts", ()=>{
+    })
+        .on("/shirts", ()=>{
         renderTemplate(templateShirt,"content")
         shirtRiderFields()
     })

@@ -22,17 +22,17 @@ async function makeTable(){
     const id = d.value;
     await fetch(URL+"/"+id+"/riders")
         .then(res => res.json())
-        .then(fetchedRiders =>{
+        .then(Riders =>{
             const body = document.getElementById("teams-table")
-            fetchedRiders.forEach( rider =>{
+            Riders.forEach( riders =>{
                 body.innerHTML +='<tr>\n' +
-                    '                <td>'+rider.name+'</td>\n' +
-                    '                <td>'+rider.age+'</td>\n' +
-                    '                <td>'+rider.country+'</td>\n' +
-                    '                <td>'+rider.team+'</td>\n'+
-                    '                <td>'+rider.mountainPoints+'</td>\n' +
-                    '                <td>'+rider.sprintPoints+'</td>\n' +
-                    '                <td>'+rider.totalTime+'</td>\n' +
+                    '                <td>'+riders.name+'</td>\n' +
+                    '                <td>'+riders.age+'</td>\n' +
+                    '                <td>'+riders.country+'</td>\n' +
+                    '                <td>'+riders.team+'</td>\n'+
+                    '                <td>'+riders.mountainPoints+'</td>\n' +
+                    '                <td>'+riders.sprintPoints+'</td>\n' +
+                    '                <td>'+riders.totalTime+'</td>\n' +
                     '            </tr>'
             })
         })
