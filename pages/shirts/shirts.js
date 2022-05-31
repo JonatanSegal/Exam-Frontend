@@ -1,4 +1,4 @@
-const URL = "https://sem3-24hexam.azurewebsites.net/api/tour"
+const URL = "http://localhost:8080/api/tour"
 
 export async function shirtRiderFields(){
     document.getElementById("Shirt-Select").onchange = shirtRider;
